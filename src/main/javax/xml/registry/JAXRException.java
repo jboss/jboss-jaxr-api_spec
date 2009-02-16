@@ -28,6 +28,8 @@ package javax.xml.registry;
 public class JAXRException extends Exception
    implements JAXRResponse
 {
+   private static final long serialVersionUID = -396751348710944315L;
+   
    protected Throwable cause;
 
    public JAXRException()

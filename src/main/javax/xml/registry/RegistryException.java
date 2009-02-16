@@ -30,6 +30,8 @@ import javax.xml.registry.infomodel.Key;
 public class RegistryException
    extends JAXRException
 {
+   private static final long serialVersionUID = -2972094643801708304L;
+   
    private Key key;
 
 	public RegistryException()
