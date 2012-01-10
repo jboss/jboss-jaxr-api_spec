@@ -64,10 +64,18 @@ public abstract class ConnectionFactory
       ConnectionFactory factory = null;
       try
       {
-         String defaultName = null;
+         // Default to scout for now
+         String defaultName = "org.apache.ws.scout.ConnectionFactoryImpl";
          factoryName = System.getProperty(SYS_PROP_NAME, defaultName);
          ClassLoader loader = Thread.currentThread().getContextClassLoader();
-         Class factoryClass = loader.loadClass(factoryName);
+         Class factoryClass;
+         try {
+             factoryClass = loader.loadClass(factoryName);
+         } catch (ClassNotFoundException e) {
+             // Fall back to defining CL
+             factoryClass = ConnectionFactory.class.getClassLoader().loadClass(factoryName);             
+         }
+
          factory = (ConnectionFactory) factoryClass.newInstance();
       }
       catch(Throwable e)
