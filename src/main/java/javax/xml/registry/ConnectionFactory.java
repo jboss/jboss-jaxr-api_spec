@@ -65,7 +65,7 @@ public abstract class ConnectionFactory
       try
       {
          // Default to scout for now
-         String defaultName = "org.apache.ws.scout.ConnectionFactoryImpl";
+         String defaultName = "org.apache.ws.scout.registry.ConnectionFactoryImpl";
          factoryName = System.getProperty(SYS_PROP_NAME, defaultName);
          ClassLoader loader = Thread.currentThread().getContextClassLoader();
          Class factoryClass;
