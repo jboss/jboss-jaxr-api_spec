@@ -8,7 +8,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.jboss.spec.javax.xml.registry</groupId>
   <artifactId>jboss-jaxr-api_1.0_spec</artifactId>
-  <version>1.0.1.Final</version>
+  <version>1.0.2-SNAPSHOT</version>
   <name>Java API for XML Registries 1.0</name>
   <description>The Java API for XML Registries 1.0 API classes</description>
   
