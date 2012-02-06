@@ -1,21 +1,34 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  
+<?xml version='1.0' encoding='UTF-8'?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
   <parent>
     <groupId>org.jboss</groupId>
     <artifactId>jboss-parent</artifactId>
     <version>8</version>
   </parent>
-  <modelVersion>4.0.0</modelVersion>
+
   <groupId>org.jboss.spec.javax.xml.registry</groupId>
   <artifactId>jboss-jaxr-api_1.0_spec</artifactId>
   <version>1.0.2-SNAPSHOT</version>
+
   <name>Java API for XML Registries 1.0</name>
   <description>The Java API for XML Registries 1.0 API classes</description>
   
+  <licenses>
+    <license>
+      <name>lgpl</name>
+      <url>http://repository.jboss.org/licenses/lgpl-2.1.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
   <scm>
     <connection>scm:git:git@github.com:jboss/jboss-jaxr-api_spec.git</connection>
     <developerConnection>scm:git:git@github.com:jboss/jboss-jaxr-api_spec.git</developerConnection>
-    <url>http://github.com/jboss/jboss-jaxr-api_spec</url>
+    <url>https://github.com/jboss/jboss-jaxr-api_spec</url>
   </scm>
   
   <dependencies>
