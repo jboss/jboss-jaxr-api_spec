@@ -11,7 +11,7 @@
 
   <groupId>org.jboss.spec.javax.xml.registry</groupId>
   <artifactId>jboss-jaxr-api_1.0_spec</artifactId>
-  <version>1.0.2.Final</version>
+  <version>1.0.3.Final-SNAPSHOT</version>
 
   <name>Java(TM) API for XML Registries 1.0 (JAXR)</name>
   <description>JSR 93: Java(TM) API for XML Registries 1.0 (JAXR)</description>
