@@ -14,8 +14,8 @@
   <artifactId>jboss-jaxr-api_1.0_spec</artifactId>
   <version>1.0.2.Final-SNAPSHOT</version>
 
-  <name>Java API for XML Registries 1.0</name>
-  <description>The Java API for XML Registries 1.0 API classes</description>
+  <name>Java(TM) API for XML Registries 1.0 (JAXR)</name>
+  <description>JSR 93: Java(TM) API for XML Registries 1.0 (JAXR)</description>
   
   <licenses>
     <license>
@@ -63,6 +63,61 @@
             </configuration>            
           </execution>
         </executions>
+      </plugin>
+
+      <!-- Generate the OSGi jar Manifest. -->
+      <plugin>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-bundle-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>bundle-manifest</id>
+            <phase>process-classes</phase>
+            <goals>
+              <goal>manifest</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <archive>
+            <manifest>
+              <addDefaultSpecificationEntries>false</addDefaultSpecificationEntries>
+            </manifest>
+          </archive>
+          <instructions>
+            <Specification-Title>JSR 93: Java(TM) API for XML Registries 1.0 (JAXR)</Specification-Title>
+            <Specification-Vendor>Oracle</Specification-Vendor>
+            <Specification-Version>1.0</Specification-Version>
+            <!-- Set the package version to match the spec version -->
+            <Export-Package>
+              javax.xml.registry*;version=1.0
+            </Export-Package>
+          </instructions>
+        </configuration>
+      </plugin>
+      <!-- Add the OSGi Manifest to the main jar -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <configuration>
+          <archive>
+            <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+          </archive>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <configuration>
+          <archive>
+            <manifestEntries>
+              <Specification-Title>JSR 93: Java(TM) API for XML Registries 1.0 (JAXR)</Specification-Title>
+              <Specification-Vendor>Oracle</Specification-Vendor>
+              <Specification-Version>1.0</Specification-Version>
+            </manifestEntries>
+          </archive>
+        </configuration>
       </plugin>
     </plugins>
   </build>
